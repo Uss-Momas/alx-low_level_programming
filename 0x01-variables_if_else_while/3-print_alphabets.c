@@ -15,11 +15,11 @@ int main(void)
 			while (upChar <= 'Z')
 			{
 				putchar(upChar);
-				upChar++;
 				if (upChar == 'Z')
 				{
 					putchar('\n');
 				}
+				upChar++;
 			}
 		ch++;
 	}
