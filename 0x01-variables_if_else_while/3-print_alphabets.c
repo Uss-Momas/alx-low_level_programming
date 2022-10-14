@@ -19,7 +19,6 @@ int main(void)
 				if (upChar == 'Z')
 				{
 					putchar('\n');
-					break;
 				}
 			}
 		ch++;
