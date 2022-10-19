@@ -7,7 +7,7 @@ int main(void)
 {
 	long int count = 0, previous = 1, now = 2, next;
 
-	printf("%ld,%ld", previous, now);
+	printf("%ld, %ld", previous, now);
 	while (count <= 50)
 	{
 		next = previous + now;
@@ -16,7 +16,7 @@ int main(void)
 		if (count == 50)
 			printf("\n");
 		else
-			printf(",%ld", next);
+			printf(", %ld", next);
 		count++;
 	}
 	return (0);
