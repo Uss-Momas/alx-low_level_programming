@@ -5,9 +5,11 @@
   */
 void jack_bauer(void)
 {
-	for (int i = 0; i < 24; i++)
+	int i, j;
+
+	for (i = 0; i < 24; i++)
 	{
-		for (int j = 0; j < 60; j++)
+		for (j = 0; j < 60; j++)
 		{
 			int first = i / 10;
 			int second = i % 10;
