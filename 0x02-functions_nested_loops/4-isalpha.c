@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-  * _islower - verify if a char is upper
+  * _isalpha - verify if a char is upper
   * @c: is a integer of a character
   * Return: 1 if it is a upper char or 0 if it not
   */
