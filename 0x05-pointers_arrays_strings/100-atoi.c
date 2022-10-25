@@ -13,6 +13,9 @@ int _atoi(char *s)
 	{
 		if (s[i] == '-')
 			countNegatives++;
+		if (s[i + 1] != '\0')
+			if (s[i + 1] >= 48 && s[i + 1] <= 57)
+				break;
 		i++;
 	}
 
@@ -28,7 +31,7 @@ int _atoi(char *s)
 				if (sign == 1)
 					return (INT_MAX);
 				else
-					return (INT_MIN);
+					return ((signed int)INT_MIN);
 			}
 			res = res * 10 + s[i] - '0';
 			if (s[i + 1] != '\0')
