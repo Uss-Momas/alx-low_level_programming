@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 /**
   * main - entry point of the program
   * @argc: the number os arguments of the program
@@ -12,14 +13,9 @@ int main(int argc, char *argv[])
 
 	if (argc > 1)
 	{
-		for (i = 0; i < argc; i++)
+		for (i = 1; i < argc; i++)
 		{
-			if (*argv[i] >= 'a' && *argv[i] <= 'z')
-			{
-				printf("Error\n");
-				return (-1);
-			}
-			if (*argv[i] >= 'A' && *argv[i] <= 'Z')
+			if (tolower(*argv[i]) >= 'a' && tolower(*argv[i]) <= 'z')
 			{
 				printf("Error\n");
 				return (-1);
