@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 					number -= 5;
 				else if (number >= 2)
 					number -= 2;
-				else if(number >= 1)
+				else if (number >= 1)
 					number -= 1;
 				ncoins++;
 			}
