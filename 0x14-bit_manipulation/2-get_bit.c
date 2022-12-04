@@ -1,7 +1,6 @@
 #include "main.h"
 
-
-int numberBits(unsigned long int n);
+unsigned int numberBits(unsigned long int n);
 
 /**
   * get_bit - gets a bit in a index
@@ -12,10 +11,11 @@ int numberBits(unsigned long int n);
 
 int get_bit(unsigned long int n, unsigned int index)
 {
-	int result, nbits;
+	int result;
+	unsigned int nbits;
 
 	nbits = numberBits(n);
-	if (nbits < (int)index)
+	if (index > nbits)
 		return (-1);
 	result = (n >> index) & 1;
 	return (result);
@@ -26,10 +26,10 @@ int get_bit(unsigned long int n, unsigned int index)
   * @n: the number
   * Return: the total of bits
   */
-int numberBits(unsigned long int n)
+unsigned int numberBits(unsigned long int n)
 {
 	unsigned long int number;
-	int nBits = 0;
+	unsigned int nBits = 0;
 
 	number = n;
 	while (number > 0)
