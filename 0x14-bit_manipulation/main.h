@@ -2,6 +2,6 @@
 #define _main_h_
 int _putchar(char c);
 unsigned int binary_to_uint(const char *b);
-int _pow(int a, int b);
+unsigned long _pow(int, int);
 void print_binary(unsigned long int n);
 #endif
