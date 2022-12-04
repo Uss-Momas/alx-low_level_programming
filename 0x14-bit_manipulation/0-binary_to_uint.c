@@ -3,7 +3,7 @@
 #include <stdio.h>
 /**
   * binary_to_uint - convert a binary number to an unsigned int
-  * @b - pointer to the string containing 0's and 1's
+  * @b: pointer to the string containing 0's and 1's
   * Return: the converted number, or 0 if
   * there's a char diferent from 0 and 1
   * b is NULL
@@ -26,16 +26,4 @@ unsigned int binary_to_uint(const char *b)
 		decVal = decVal * 2;
 	}
 	return (convertedNumber);
-}
-
-int _pow(int a, int b)
-{
-	int i, p;
-
-	p = 1;
-	if (b == 0)
-		return (1);
-	for (i = 0; i < b; i++)
-		p *= a;
-	return (p);
 }
