@@ -14,8 +14,8 @@ int get_bit(unsigned long int n, unsigned int index)
 	int result;
 	unsigned int nbits;
 
-	nbits = numberBits(n);
-	if (index > nbits)
+	/* nbits = numberBits(n);*/
+	if (index > 32)
 		return (-1);
 	result = (n >> index) & 1;
 	return (result);
