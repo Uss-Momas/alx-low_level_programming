@@ -12,7 +12,7 @@ unsigned int numberBits(unsigned long int n);
 int get_bit(unsigned long int n, unsigned int index)
 {
 	int result;
-	unsigned int nbits;
+	/* unsigned int nbits;*/
 
 	/* nbits = numberBits(n);*/
 	if (index > 32)
