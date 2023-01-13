@@ -2,6 +2,11 @@
 #include <stdlib.h>
 #include "lists.h"
 
+/**
+ * getNewNode - function that creates a new Node
+ * @n: the data to be added
+ * Return: the address of the new Node
+ */
 dlistint_t *getNewNode(const int n)
 {
 	dlistint_t *new;
