@@ -1,7 +1,7 @@
 #ifndef _HASH_H_
 #define _HASH_H_
 
-
+#include <stdlib.h>
 /**
  * struct hash_node_s - Node of a hash table
  *
@@ -14,7 +14,7 @@
 typedef struct hash_node_s
 {
 	char *key;
-	char *value;0
+	char *value;
 	struct hash_node_s *next;
 } hash_node_t;
 
