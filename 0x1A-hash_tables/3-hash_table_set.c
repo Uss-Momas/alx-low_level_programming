@@ -9,44 +9,39 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *node, *current_node;
+	hash_node_t *node, *temp_node;
 	unsigned long int index;
 
-	index = key_index((unsigned char *) key, ht->size);
-
-	node = create_node((char *)key, (char *)value);
-	if (node == NULL)
+	if (ht == NULL || ht->array == NULL || value == NULL)
 		return (0);
-	current_node = ht->array[index];
-	/* se for NULL significa que aquele indice nao esta ocupado*/
-	if (current_node == NULL)
+	if (key == NULL)
+		return (0);
+
+	index = key_index((unsigned char *) key, ht->size);
+	temp_node = ht->array[index];
+
+	/* Checking for collisions*/
+	while (temp_node != NULL)
 	{
-		node->next = NULL;
-		ht->array[index] = node;
-		/* printf("\t%lu \t%s\n", index, node->value);*/
-	}
-	/* significa que o indice esta ocupado*/
-	else
-	{
-		/*verificar se as chaves sao identicas*/
-		/* se forem identicas, significa que temos que actualizar*/
-		if (strcmp(current_node->key, (char *) key) == 0)
+		if (strcmp(temp_node->key, key) == 0)
 		{
-			/* Actualizar o valor*/
-			strcpy(ht->array[index]->value, value);
-			/* printf("\t%lu \t%s\n", index, ht->array[index]->value);*/
+			free(temp_node->value);
+			temp_node->value = strdup(value);
 			return (1);
 		}
-		else
-		{
-			/*Colisao encontrada*/
-			/*Por enquanto faz nada*/
-			node->next = current_node;
-			ht->array[index] = node;
-			/* printf("Colision found\n:\t%lu \t%s\n",index, current_node->value);*/
-			return (1);
-		}
+		temp_node = temp_node->next;
 	}
+
+	node = malloc(sizeof(hash_node_t));
+	if (node == NULL)
+	{
+		free(node);
+		return (0);
+	}
+	node->key = strdup(key);
+	node->value = strdup(value);
+	node->next = ht->array[index];
+	ht->array[index] = node;
 	return (1);
 }
 
