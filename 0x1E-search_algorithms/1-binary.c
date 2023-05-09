@@ -10,7 +10,7 @@
  */
 int binary_search(int *array, size_t size, int value)
 {
-	int m, L = 0 , R = size - 1, idx;
+	int m, L = 0, R = size - 1, idx;
 
 	if (array != NULL)
 	{
@@ -27,7 +27,7 @@ int binary_search(int *array, size_t size, int value)
 				printf("%i, ", array[idx]);
 			}
 			printf("\n");
-			m = ( L + R) / 2;
+			m = (L + R) / 2;
 			if (array[m] < value)
 			{
 				L = m + 1;
